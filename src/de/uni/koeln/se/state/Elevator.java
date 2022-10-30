@@ -11,16 +11,21 @@ public class Elevator {
     public Elevator(int dest_floor) {
         this.dest_Floor = dest_floor;
         System.out.println("*** Destination floor is: " + dest_Floor);
-        if (current_Floor < dest_Floor) {
-            go_up();
-            arrive_atFloor();
-        } else if (current_Floor > dest_Floor) {
-            go_down();
-            arrive_atFloor();
-        } else if(current_Floor == dest_floor){
-            exit();
+        if (dest_floor < 0 || dest_floor > 10) {
+            System.out.println("--------------------------------------------");
+            System.out.println("ERROR - Floor does not exist");
+            System.out.println("--------------------------------------------");
+        }else {
+            if (current_Floor < dest_Floor) {
+                go_up();
+                arrive_atFloor();
+            } else if (current_Floor > dest_Floor) {
+                go_down();
+                arrive_atFloor();
+            } else if (current_Floor == dest_floor) {
+                exit();
+            }
         }
-
     }
 
     private void arrive_atFloor() {
