@@ -9,6 +9,7 @@ public class Elevator {
     private Elv_States State = new Elv_States();
 
     public Elevator(int dest_floor) {
+        State.Current_State = State.Idle;
         this.dest_Floor = dest_floor;
         System.out.println("*** Destination floor is: " + dest_Floor);
         if (dest_floor < 0 || dest_floor > 10) {
